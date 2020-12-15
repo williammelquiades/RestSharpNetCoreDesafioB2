@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 
 
-namespace RestSharpNetCoreDesafioB2.Requests.Projetos
+namespace RestSharpNetCoreDesafioB2.Requests.Projects
 {
     public class POST_CreateProjectRequest : RequestBase
     {
@@ -25,7 +25,7 @@ namespace RestSharpNetCoreDesafioB2.Requests.Projetos
                                 string labelView_state
                                 )
         {
-            jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/Projetos/CreateProject.json", Encoding.UTF8);
+            jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/Projects/CreateProject.json", Encoding.UTF8);
             jsonBody = jsonBody.Replace("$name", name)
             .Replace("$nameStatus", nameStatus)
             .Replace("$labelStatus", labelStatus)

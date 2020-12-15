@@ -1,12 +1,12 @@
 ﻿using RestSharp;
-using  RestSharpNetCoreDesafioB2.Helpers;
+using RestSharpNetCoreDesafioB2.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace  RestSharpNetCoreDesafioB2.Bases
+namespace RestSharpNetCoreDesafioB2.Bases
 {
     public class RequestBase
     {
@@ -22,14 +22,14 @@ namespace  RestSharpNetCoreDesafioB2.Bases
         protected bool httpBasicAuthenticator = false;
 
         protected bool ntlmAuthenticator = false;
-        
+
         protected IDictionary<string, string> headers = new Dictionary<string, string>()
         {
             //Dicionário de headeres deve ser iniciado com os headers comuns a todos os métodos da API
             {"Content-Type", "application/json"},
             {"Authorization", JsonBuilder.ReturnParameterAppSettings("TOKEN")}
         };
-               
+
         protected IDictionary<string, string> cookies = new Dictionary<string, string>()
         {
             //Dicionário de cookies deve ser iniciado com os headers comuns à todas os métodos da API
@@ -52,7 +52,7 @@ namespace  RestSharpNetCoreDesafioB2.Bases
 
         public void RemoveHeader(string header)
         {
-            headers.Remove(header);           
+            headers.Remove(header);
         }
 
         public void RemoveCookie(string cookie)

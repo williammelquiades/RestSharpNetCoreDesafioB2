@@ -1,0 +1,7 @@
+﻿{
+  "name": "$version",
+  "description": "$description",
+  "released": true,
+  "obsolete": false,
+  "timestamp": "$dateNow"
+}

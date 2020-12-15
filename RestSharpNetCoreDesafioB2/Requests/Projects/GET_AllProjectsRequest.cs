@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestSharpNetCoreDesafioB2.Requests.Projetos
+namespace RestSharpNetCoreDesafioB2.Requests.Projects
 {
     public class GET_AllProjectsRequest : RequestBase
     {
