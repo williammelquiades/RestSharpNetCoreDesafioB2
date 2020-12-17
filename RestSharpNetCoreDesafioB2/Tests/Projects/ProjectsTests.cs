@@ -29,7 +29,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
         {
             #region Parameters
             List<string> quantityProjectBD = ProjectsBDSteps.ReturnAllProject();
-            //Contain Result in Request
+            //Expected Result
             int statusCodeResponse = 200;
             #endregion
 
@@ -61,7 +61,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
             string project_id = dataProject[0];
             string nameProject = dataProject[1];
 
-            //Contain Result in Request
+            //Expected Result
             string statusCodeResponse = "OK";
             #endregion
 
@@ -99,7 +99,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
             string nameView_state = "public";
             string labelView_state = "public";
 
-            //Contain Result in Request
+            //Expected Result
             string statusCodeResponse = "Created";
             #endregion
 
@@ -137,7 +137,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
             string nameView_state = "public";
             string labelView_state = "public";
 
-            //Contain Result in Request
+            //Expected Result
             //string statusCodeResponse = "InternalServerError";
             #endregion
 
@@ -169,7 +169,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
             string nameWithVersion = "v.0." + GeneralHelpers.ReturnStringWithRandomNumbers(2);
             string descriptionVersion = "Descript_" + GeneralHelpers.ReturnStringWithRandomCharacters(4);
             
-            //Result Response
+            //Expected Result
             string statusCodeResponse = null;
             #endregion
 
@@ -205,7 +205,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
 
             string newName = "Project API v.0." + GeneralHelpers.ReturnStringWithRandomNumbers(3) + " Automation";
 
-            // Resultado esperado
+            // Expected Result
             int statusCodeEsperado = 200;
             #endregion
 
@@ -233,7 +233,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
             List<string> dataProject = ProjectsBDSteps.ReturnProjectIDRandom();
             string project_id = dataProject[0];
 
-            // Resultado esperado
+            // Expected Result
             int statusCodeEsperado = 200;
             #endregion
 

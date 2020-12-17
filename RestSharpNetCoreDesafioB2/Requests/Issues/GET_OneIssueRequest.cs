@@ -6,9 +6,9 @@ using System.Text;
 
 namespace RestSharpNetCoreDesafioB2.Requests.Issues
 {
-    public class GET_OneIssue : RequestBase
+    public class GET_OneIssueRequest : RequestBase
     {
-        public GET_OneIssue(string issue_id)
+        public GET_OneIssueRequest(string issue_id)
         {
             requestService = "/api/rest/issues/{issue_id}";
 

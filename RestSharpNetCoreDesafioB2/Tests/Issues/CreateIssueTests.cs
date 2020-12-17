@@ -15,7 +15,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
     public class CreateIssueTests : TestBase
     {
         private POST_CreateAnIssueRequest sendOneIssue;
-        private GET_OneIssue oneIssue;
+        private GET_OneIssueRequest oneIssue;
 
         IRestResponse<dynamic> response;
 
@@ -31,7 +31,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
             string nomePriority = "normal";
 
 
-            //Resultado esperado
+            //Expected Result
             string statusCodeResponse = "BadRequest";
             string message = "Project not specified";
             string code = "11";
@@ -71,7 +71,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
             string description = "Description " + GeneralHelpers.ReturnStringWithRandomCharacters(5);
             string categoryName = "General";
 
-            // Result Response
+            // Expected Result
             string statusCodeResponse = "Created";
             #endregion
 
@@ -93,10 +93,6 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
                 //Assert.AreEqual(summary, response.Data["issue"]["summary"].ToString());
                 //Assert.AreEqual(description, response.Data["issue"]["description"].ToString());
                 //Assert.AreEqual(nameProject, response.Data["issue"]["project"]["name"].ToString());
-                
-
-
-
             });
             #endregion
         }
@@ -109,7 +105,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
             List<string> dataIssue = IssuesBDSteps.ReturnIssuesRandom();
             string issue_id = dataIssue[0];
 
-            //Resultado esperado
+            //Expected Result
             string statusCodeResponse = "OK";
     
             string summary = dataIssue[1];
@@ -119,7 +115,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
             #endregion
 
             #region Request
-            oneIssue = new GET_OneIssue(issue_id);
+            oneIssue = new GET_OneIssueRequest(issue_id);
 
             response = oneIssue.ExecuteRequest();
             #endregion

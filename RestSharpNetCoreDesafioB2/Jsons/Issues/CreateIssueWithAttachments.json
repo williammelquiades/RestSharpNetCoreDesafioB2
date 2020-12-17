@@ -1,0 +1,31 @@
+﻿{
+    "summary": "Sample REST issue with attachment",
+    "description": "Description for sample REST issue.",
+    "project": {
+        "id": 1,
+        "name": "mantisbt"
+    },
+    "category": {
+        "id": 5,
+        "name": "bugtracker"
+    },
+    "custom_fields": [
+        {
+            "field": {
+                "id": 4,
+                "name": "The City"
+            },
+            "value": "Seattle"
+        }
+    ],
+    "files": [
+        {
+            "name": "test.txt",
+            "content": "VGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4NClRoaXMgaXMgYSBURVNULg0KVGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4="
+        },
+        {
+            "name": "test2.txt",
+            "content": "VGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4NClRoaXMgaXMgYSBURVNULg0KVGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4="
+        }
+    ]
+}

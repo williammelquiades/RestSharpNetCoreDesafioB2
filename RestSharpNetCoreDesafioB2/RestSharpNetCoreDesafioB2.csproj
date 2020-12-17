@@ -49,6 +49,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ProjectsQueries.resx</DependentUpon>
     </Compile>
+    <Compile Update="Queries\Users\UsersQueries.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UsersQueries.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 
@@ -60,6 +65,10 @@
     <EmbeddedResource Update="Queries\Projects\ProjectsQueries.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ProjectsQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Queries\Users\UsersQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UsersQueries.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

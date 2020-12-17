@@ -31,7 +31,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
             List<string> dataProjectName = ProjectsBDSteps.ReturnProjectByNameRandom();
             string name = dataProjectName[0];
 
-            // Result Response
+            // Expected Result
             string statusCodeResponse = "NoContent";//"BadRequest";
             #endregion
 
@@ -57,7 +57,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Projects
 
             string notProject = "Inexist Project";
 
-            // Result Response
+            // Expected Result
             string statusCodeResponse = "NotFound";
             string message = "Project 'Inexist Project' not found";
             string codeResponse = "700";
