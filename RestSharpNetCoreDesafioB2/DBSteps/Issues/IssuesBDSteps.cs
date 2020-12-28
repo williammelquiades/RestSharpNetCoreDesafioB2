@@ -15,5 +15,23 @@ namespace RestSharpNetCoreDesafioB2.DBSteps.Issues
             return DataBaseHelpers.RetornaDadosQuery(executQuerie);
         }
 
+        public static List<string> ReturnIdIssuesRandom()
+        {
+            string executQuerie = IssuesQueries.SearchIdIssuesRandom;
+            return DataBaseHelpers.RetornaDadosQuery(executQuerie);
+        }
+
+        public static List<string> GetOneIssue()
+        {
+            string executQuerie = IssuesQueries.GetOneIssues;
+            return DataBaseHelpers.RetornaDadosQuery(executQuerie);
+        }
+
+        public static List<string> GetNoteIssue()
+        {
+            string executQuerie = IssuesQueries.GetNoteIssues;
+            return DataBaseHelpers.RetornaDadosQuery(executQuerie);
+        }
+
     }
 }

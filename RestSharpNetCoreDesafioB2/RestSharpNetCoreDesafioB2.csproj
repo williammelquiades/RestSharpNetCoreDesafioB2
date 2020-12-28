@@ -39,6 +39,16 @@
 
 
   <ItemGroup>
+    <Compile Update="Queries\Filters\FiltersQueries.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FiltersQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Queries\General\GeneralQueries.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GeneralQueries.resx</DependentUpon>
+    </Compile>
     <Compile Update="Queries\Issues\IssuesQueries.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -58,6 +68,14 @@
 
 
   <ItemGroup>
+    <EmbeddedResource Update="Queries\Filters\FiltersQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FiltersQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Queries\General\GeneralQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GeneralQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Queries\Issues\IssuesQueries.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>IssuesQueries.Designer.cs</LastGenOutput>

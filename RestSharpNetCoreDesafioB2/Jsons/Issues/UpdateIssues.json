@@ -1,0 +1,6 @@
+﻿{
+  "summary": "$summary",
+  "priority": {
+    "name": "$priorityName"
+  }
+}

@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="GetNoteIssues" xml:space="preserve">
+    <value>SELECT id,bug_id FROM mantis_bugnote_table
+ORDER BY id DESC
+LIMIT 1</value>
+  </data>
+  <data name="GetOneIssues" xml:space="preserve">
+    <value>SELECT ID FROM mantis_bug_table
+ORDER BY ID DESC
+LIMIT 1</value>
+  </data>
+  <data name="SearchIdIssuesRandom" xml:space="preserve">
+    <value>SELECT id, summary FROM mantis_bug_table ORDER BY RAND() LIMIT 1;</value>
+  </data>
   <data name="SearchIssuesRandom" xml:space="preserve">
     <value>SELECT a.id, a.summary, b.description, c.id, c.name, a.category_id, d.name, e.id, e.username, e.realname, e.email,  a.status, a.resolution , a.view_state, a.priority, a.severity, a.reproducibility, 
 a.sticky, DATE_FORMAT(FROM_UNIXTIME(a.date_submitted), "%d/%m/%Y %T") AS created_at,  DATE_FORMAT(FROM_UNIXTIME(a.last_updated),  "%d/%m/%Y %T")  AS updated_at , DATE_FORMAT(FROM_UNIXTIME(f.date_modified),  "%d/%m/%Y %T")  AS created_at ,f.user_id, g.username, g.realname, g.email, f.type
@@ -135,5 +148,10 @@ INNER JOIN mantis_user_table AS g
 ON f.user_id = g.id
 ORDER BY RAND()
 limit 1</value>
+  </data>
+  <data name="SearchNotes" xml:space="preserve">
+    <value>SELECT id,bug_id FROM mantis_bugnote_table
+ORDER BY id DESC
+LIMIT 1</value>
   </data>
 </root>

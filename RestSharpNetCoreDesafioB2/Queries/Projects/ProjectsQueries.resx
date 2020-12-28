@@ -137,6 +137,11 @@ FROM mantis_project_table;</value>
 ORDER BY RAND()
 LIMIT 1;</value>
   </data>
+  <data name="SearchIdSubProjectsRandom" xml:space="preserve">
+    <value>SELECT parent_id FROM mantis_project_hierarchy_table
+ORDER BY RAND()
+LIMIT 1</value>
+  </data>
   <data name="SearchNameProjectsRandom" xml:space="preserve">
     <value>SELECT name FROM mantis_project_table
 ORDER BY RAND()

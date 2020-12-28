@@ -102,11 +102,22 @@ namespace RestSharpNetCoreDesafioB2.Queries.Projects {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT ID FROM mantis_project_table
         ///ORDER BY RAND()
-        ///LIMIT 1;
+        ///LIMIT 1;.
         /// </summary>
         internal static string SearchIdProjectsRandom {
             get {
                 return ResourceManager.GetString("SearchIdProjectsRandom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT parent_id FROM mantis_project_hierarchy_table
+        ///ORDER BY RAND()
+        ///LIMIT 1.
+        /// </summary>
+        internal static string SearchIdSubProjectsRandom {
+            get {
+                return ResourceManager.GetString("SearchIdSubProjectsRandom", resourceCulture);
             }
         }
         

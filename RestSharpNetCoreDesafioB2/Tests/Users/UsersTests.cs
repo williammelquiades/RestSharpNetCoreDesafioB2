@@ -25,6 +25,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
         IRestResponse<dynamic> response;
 
         [Test]
+        [Parallelizable]
         public void CreateUserSucess()
         {
             #region Parameters
@@ -37,7 +38,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             string protectedLevel = "false";
 
             //Expected Result
-            string statusCodeResponse = "Created";
+            string statusCodeExpected = "Created";
             #endregion
 
             #region Request
@@ -52,16 +53,17 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             #region Assert
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(statusCodeResponse, response.StatusCode.ToString());
+                Assert.AreEqual(statusCodeExpected, response.StatusCode.ToString());
             });
             #endregion
         }
 
         [Test]
+        [Parallelizable]
         public void CreateUserIgual()
         {
             #region Parameters
-            List<string> dataUser = UsersBDSteps.ReturnUsersRandom();
+            List<string> dataUser = UsersBDSteps.ReturnMyUser();
             string username = dataUser[1];
             string password = "!@#$123";
             string real_name = dataUser[2];
@@ -71,7 +73,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             string protectedLevel = "false";
 
             //Expected Result
-            string statusCodeResponse = "BadRequest";
+            string statusCodeExpected = "BadRequest";
             string message = "Username '" + username + "' already used.";
             string statusCode = "800";
             string localized = "That username is already being used. Please go back and select another one.";
@@ -89,7 +91,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             #region Assert
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(statusCodeResponse, response.StatusCode.ToString());
+                Assert.AreEqual(statusCodeExpected, response.StatusCode.ToString());
                 Assert.AreEqual(message, response.Data["message"].ToString());
                 Assert.AreEqual(statusCode, response.Data["code"].ToString());
                 Assert.AreEqual(localized, response.Data["localized"].ToString());
@@ -98,6 +100,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
         }
 
         [Test]
+        [Parallelizable]
         public void GetInfoMYUser()
         {
             #region Parameters
@@ -127,6 +130,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
         }
 
         [Test]
+        [Parallelizable]
         public void DeleteUserRandom()
         {
             #region Parameters
@@ -135,7 +139,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             string idUser = dataUser[0];
 
             //Expected Result
-            string statusCodeResponse = "NoContent";
+            string statusCodeExpected = "NoContent";
             #endregion
 
             #region Request
@@ -149,13 +153,14 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             #region Assert
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(statusCodeResponse, response.StatusCode.ToString());
+                Assert.AreEqual(statusCodeExpected, response.StatusCode.ToString());
             });
             #endregion
         }
 
 
         [Test]
+        [Parallelizable]
         public void ResetPasswordUserRandom()
         {
             #region Parameters
@@ -164,7 +169,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             string idUser = dataUser[0];
 
             //Expected Result
-            int statusCodeResponse = 404;
+            int statusCode = 404;
             string message = "Not found";
             #endregion
 
@@ -179,7 +184,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             #region Assert
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(statusCodeResponse, (int)response.StatusCode);
+                Assert.AreEqual(statusCode, (int)response.StatusCode);
                 Assert.AreEqual(message, response.Data["message"].ToString());
             });
             #endregion

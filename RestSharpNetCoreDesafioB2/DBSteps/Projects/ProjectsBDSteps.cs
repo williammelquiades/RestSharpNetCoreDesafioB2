@@ -47,11 +47,16 @@ namespace RestSharpNetCoreDesafioB2.DBSteps.Projects
             return DataBaseHelpers.RetornaDadosQuery(executQuerie);
         }
 
-
         public static void DeleteHierarchyProject()
         {
             string executQuerie = ProjectsQueries.ClearHierarchyProject;
             DataBaseHelpers.ExecuteQuery(executQuerie);
+        }
+
+        public static List<string> ReturnIDSubProject()
+        {
+            string executQuerie = ProjectsQueries.SearchIdSubProjectsRandom;
+            return DataBaseHelpers.RetornaDadosQuery(executQuerie);
         }
     }
 }

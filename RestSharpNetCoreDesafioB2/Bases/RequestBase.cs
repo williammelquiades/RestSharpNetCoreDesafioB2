@@ -27,6 +27,7 @@ namespace RestSharpNetCoreDesafioB2.Bases
         {
             //Dicionário de headeres deve ser iniciado com os headers comuns a todos os métodos da API
             {"Content-Type", "application/json"},
+            //{"Content-Type", "multipart/form-data"},
             {"Authorization", JsonBuilder.ReturnParameterAppSettings("TOKEN")}
         };
 
@@ -35,7 +36,10 @@ namespace RestSharpNetCoreDesafioB2.Bases
             //Dicionário de cookies deve ser iniciado com os headers comuns à todas os métodos da API
         };
 
+        
         protected IDictionary<string, string> parameters = new Dictionary<string, string>();
+        
+        protected IDictionary<string, string> submitFiles = new Dictionary<string, string>();
 
         protected bool parameterTypeIsUrlSegment = true;
         #endregion

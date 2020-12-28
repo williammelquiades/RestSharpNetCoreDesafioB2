@@ -152,7 +152,7 @@ namespace RestSharpNetCoreDesafioB2.Helpers
 
         public static IEnumerable ReturnCSVData(string csvPath)
         {
-            using (StreamReader sr = new StreamReader(csvPath, System.Text.Encoding.GetEncoding(1252)))
+            using (StreamReader sr = new StreamReader(csvPath, CodePagesEncodingProvider.Instance.GetEncoding(1252)))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)

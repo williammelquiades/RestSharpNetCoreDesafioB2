@@ -61,6 +61,37 @@ namespace RestSharpNetCoreDesafioB2.Queries.Issues {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT id,bug_id FROM mantis_bugnote_table
+        ///ORDER BY id DESC
+        ///LIMIT 1.
+        /// </summary>
+        internal static string GetNoteIssues {
+            get {
+                return ResourceManager.GetString("GetNoteIssues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT ID FROM mantis_bug_table
+        ///ORDER BY ID DESC
+        ///LIMIT 1.
+        /// </summary>
+        internal static string GetOneIssues {
+            get {
+                return ResourceManager.GetString("GetOneIssues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT id, summary FROM mantis_bug_table ORDER BY RAND() LIMIT 1;.
+        /// </summary>
+        internal static string SearchIdIssuesRandom {
+            get {
+                return ResourceManager.GetString("SearchIdIssuesRandom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT a.id, a.summary, b.description, c.id, c.name, a.category_id, d.name, e.id, e.username, e.realname, e.email,  a.status, a.resolution , a.view_state, a.priority, a.severity, a.reproducibility, 
         ///a.sticky, DATE_FORMAT(FROM_UNIXTIME(a.date_submitted), &quot;%d/%m/%Y %T&quot;) AS created_at,  DATE_FORMAT(FROM_UNIXTIME(a.last_updated),  &quot;%d/%m/%Y %T&quot;)  AS updated_at , DATE_FORMAT(FROM_UNIXTIME(f.date_modified),  &quot;%d/%m/%Y %T&quot;)  AS created_at ,f.user_id, g.username, g.realname, g.email, f.type
         ///FROM mantis_bug_table  [o restante da cadeia de caracteres foi truncado]&quot;;.
@@ -68,6 +99,17 @@ namespace RestSharpNetCoreDesafioB2.Queries.Issues {
         internal static string SearchIssuesRandom {
             get {
                 return ResourceManager.GetString("SearchIssuesRandom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT id,bug_id FROM mantis_bugnote_table
+        ///ORDER BY id DESC
+        ///LIMIT 1.
+        /// </summary>
+        internal static string SearchNotes {
+            get {
+                return ResourceManager.GetString("SearchNotes", resourceCulture);
             }
         }
     }
