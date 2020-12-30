@@ -6,6 +6,7 @@
 	- Relatório de testes automatizados - [ExtentReports.Core 1.0.3](https://www.nuget.org/packages/ExtentReports.Core/)
 	- Framework interação com API - [Rest Sharp 106.6.10](http://restsharp.org/ "RestSharp 106.6.10") 
 	- Framework de desenvolvimento - [.Net Core](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+  - Jenkins - [.Net Core](https://dotnet.microsoft.com/download/dotnet-core/3.1 "")
 
 ## .Net Core e Visual Code
 Estamos adotando o uso do Visual Code para o desenvolvimento de projetos CSharp que estão em framework .Net Core, para isso recomendamos a configuração da ferramenta e seus recursos conforme artigo explicativo: [clique aqui](https://medium.com/@saymowan/configurando-seu-vscode-para-desenvolver-projetos-de-testes-automatizados-netcore-nunit-476e73aa7b01).
@@ -21,7 +22,7 @@ Estamos adotando o uso do Visual Code para o desenvolvimento de projetos CSharp 
 
 Para facilitar o entendimento da arquitetura do projeto de testes automatizados, o template segue a padronização utilizada para Testes Web para facilitar o entendimento e proporcionar uma melhor organização.
 
-![alt text](https://i.imgur.com/NbiGGUL.png)
+![alt text](https://i.imgur.com/EXC4keZ.png)
 
   - Bases ("contem as bases para requisições REST e SOAP alem da base para os testes")
   - DBSteps ("Contem exemplo de uso de queries")
@@ -30,50 +31,50 @@ Para facilitar o entendimento da arquitetura do projeto de testes automatizados,
   - Queries ("Diretorio para armazenar as queries utilizadas no projeto")
   - Requests ("Diretorio para armazenar as requisições do projeto")
   - Tests ("Diretorio para armazenar os testes do projeto")
-  - Xmls ("Diretorio para armazenar os xmls utilizados nas requisições do projeto")
 
 
 # Padrões de escrita de código
 
-O padrão adotado para escrita é o “CamelCase” onde uma palavra é separada da outra através de letras maiúsculas. Este padrão é adotado para o nome de pastas, classes, métodos, variáveis e arquivos em geral exceto constantes. Constantes devem ser escritas com todas suas letras em maiúsculo separando as palavras com “_”.
+- [x] 1) Implementar 50 scripts de testes que manipulem uma aplicação cuja interface é uma API
+REST.
+![alt text](https://i.imgur.com/BSGLaAz.png)
 
-Ex: `PreencherUsuario(), nomeUsuario, LoginPage etc.`
+- [x] 2) Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven.
+![alt text](https://i.imgur.com/1BuWlxA.png) ![alt text](https://i.imgur.com/t0djf3K.png)
 
-**Padrões por tipo de componente**
+- [x] 3) Notem que 50 scripts podem cobrir mais de 50 casos de testes se usarmos Data-Driven. Em
+outras palavras, implementar 50 CTs usando data-driven não é a mesma coisa que
+implementar 50 scripts.
+![alt text](https://i.imgur.com/PBcQea6.png)
 
-* Pastas: começam sempre com letra maiúscula. Ex: `Pages, DataBaseSteps, Queries, Bases`
-* Classes: começam sempre com letra maiúscula. Ex: `LoginRequest, LoginTests`
-* Arquivos: começam sempre com letra maiúscula. Ex: `DataDrivenFile.csv`
-* Métodos: começam sempre com letra maiúscula. Ex: `VerificarElementoXPTO()`
-* Variáveis: começam sempre com letra minúscula. Ex: `botaoXPTO`
-* Objetos: começam sempre com letra minúscula. Ex: `request`
+- [x] 4) O projeto deve tratar autenticação. Exemplo: OAuth2.
+As chamadas da API Mantis Bug Tracker devem ser autenticadas criando um token de API para o usuário que faz as chamadas e, em seguida, passando o token de API no cabeçalho 'Autorização'.
+![alt text](https://i.imgur.com/N6NWBgt.png) ![alt text](https://i.imgur.com/w17EZ7A.png)
 
-No caso de palavras com uma letra, as duas devem ser escritas juntas de acordo com o padrão do tipo que será nomeado, ex:`retornaSeValorEOEsperado()`
+- [x] 5) Pelo menos um teste deve fazer a validação usando REGEX (Expressões Regulares).
+![alt text](https://i.imgur.com/plPh0YT.png)
 
+- [x] 6) Pelo menos um script deve usar código Groovy / Node.js ou outra linguagem para fazer
+scripts.
+![alt text]()
 
+- [x] 7) O projeto deverá gerar um relatório de testes automaticamente.
+![alt text](https://i.imgur.com/gI9wd0f.png)
 
-**Padrões de escrita: Classes e Arquivos**
+- [x] 8) Implementar pelo menos dois ambientes (desenvolvimento / homologação)
+![alt text](https://i.imgur.com/M2pOKwi.png)
 
-Nomes de classes e arquivos devem terminar com o tipo de conteúdo que representam, em inglês, ex:
+- [x] 9) A massa de testes deve ser preparada neste projeto, seja com scripts carregando massa
+nova no BD ou com restore de banco de dados. Os fluxos de teste foram desenvolvidos sob à logica do acrônimo comumente utilizado para as quatro operações básicas usadas em Banco de Dados Relacionais.
+A ideia foi sempre manter ou criar dados para durante os testes.
+![alt text](https://i.imgur.com/BC9c3Bh.png)
 
-```
-LoginTests (classe de testes)
-LoginTestData.csv (planilha de dados)
-```
+- [x] 10) Executar testes em paralelo. Pelo menos duas threads (25 testes cada).
+Para a execução dos testes em paralelo pode ser adicionado junto a tag de "Test" a tag [Parallelizable]. E na classe AssemblyInfo.cs dentro de Properties foi adicionado a tag [assembly: LevelOfParallelism(2)] para dividir a quantidade de testes duranta a execução.
 
-OBS: Atenção ao plural e singular! Se a classe contém um conjunto do tipo que representa, esta deve ser escrita no plural, caso seja uma entidade, deve ser escrita no singular.
+![alt text](https://i.imgur.com/icECO7B.png) ![alt text](https://i.imgur.com/x28pgIV.png)
 
-
-**Padrões de escrita: Geral**
-
-Nunca utilizar acentos, caracteres especiais e “ç” para denominar pastas, classes, métodos, variáveis, objetos e arquivos.
-
-**Padrões de escrita: Objetos**
-
-Nomes dos objetos devem ser exatamente os mesmos nomes de suas classes, iniciando com letra minúscula, ex:
-
-```
-LoginRequest (classe) loginRequest (objeto)
-LoginFlows (classe) loginFlows (objeto)
-```
-**Padrões de escrita 2 : Objetos**
+- [x] 11) Testes deverão ser agendados pelo Azure DevOps, Jenkins, CircleCI, TFS ou outra
+ferramenta de CI que preferir.
+Os testes foram agendados pelo Jenkins, seguindo a configuração evidenciada neste repositorio com exemplo garimpado na web: 
+[clique aqui](https://github.com/williammelquiades/jenkinsCICDStepByStep).
