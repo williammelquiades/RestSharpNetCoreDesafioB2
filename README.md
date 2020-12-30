@@ -6,7 +6,7 @@
 	- Relatório de testes automatizados - [ExtentReports.Core 1.0.3](https://www.nuget.org/packages/ExtentReports.Core/)
 	- Framework interação com API - [Rest Sharp 106.6.10](http://restsharp.org/ "RestSharp 106.6.10") 
 	- Framework de desenvolvimento - [.Net Core](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-  - Jenkins - [.Net Core](https://dotnet.microsoft.com/download/dotnet-core/3.1 "")
+  - Framework Jenkins - [.Net Core](https://get.jenkins.io/war-stable/2.263.1/ "Jenkins 2.263.1")
 
 ## .Net Core e Visual Code
 Estamos adotando o uso do Visual Code para o desenvolvimento de projetos CSharp que estão em framework .Net Core, para isso recomendamos a configuração da ferramenta e seus recursos conforme artigo explicativo: [clique aqui](https://medium.com/@saymowan/configurando-seu-vscode-para-desenvolver-projetos-de-testes-automatizados-netcore-nunit-476e73aa7b01).
