@@ -76,3 +76,4 @@ Nomes dos objetos devem ser exatamente os mesmos nomes de suas classes, iniciand
 LoginRequest (classe) loginRequest (objeto)
 LoginFlows (classe) loginFlows (objeto)
 ```
+**Padrões de escrita 2 : Objetos**
