@@ -62,9 +62,12 @@ scripts.
 
 - [x] 9) A massa de testes deve ser preparada neste projeto, seja com scripts carregando massa
 nova no BD ou com restore de banco de dados. Os fluxos de teste foram desenvolvidos sob à logica do acrônimo comumente utilizado para as quatro operações básicas usadas em Banco de Dados Relacionais.
-A ideia foi sempre manter ou criar dados para durante os testes.
 
 ![alt text](https://i.imgur.com/BC9c3Bh.png)
+
+A ideia foi sempre manter ou criar dados durante os testes usando conexão com a Banco Mysql. Ver scrpits criados em DBSteps e Queries.
+
+![alt text](https://i.imgur.com/KgHo9vc.png) ![alt text](https://i.imgur.com/6Dkl0EG.png)
 
 - [x] 10) Executar testes em paralelo. Pelo menos duas threads (25 testes cada).
 Para a execução dos testes em paralelo pode ser adicionado junto a tag de "Test" a tag [Parallelizable]. E na classe AssemblyInfo.cs dentro de Properties foi adicionado a tag [assembly: LevelOfParallelism(2)] para dividir a quantidade de testes duranta a execução.
@@ -75,3 +78,6 @@ Para a execução dos testes em paralelo pode ser adicionado junto a tag de "Tes
 ferramenta de CI que preferir.
 Os testes foram agendados pelo Jenkins, seguindo a configuração evidenciada neste repositorio com exemplo garimpado na web: 
 [clique aqui](https://github.com/williammelquiades/jenkinsCICDStepByStep).
+
+---
+⌨️ com ❤️ por [William Melquiades](https://github.com/williammelquiades)
