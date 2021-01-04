@@ -34,7 +34,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
             string categoryName = "Rest Automation API Updaten" + GeneralHelpers.ReturnStringWithRandomNumbers(2);
 
             //Expected Result
-            string statusCodeEsperado = "OK";
+            string statusCodeExpected = "OK";
 
             #endregion
 
@@ -49,7 +49,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
             #region Assert
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(statusCodeEsperado, response.StatusCode.ToString());
+                Assert.AreEqual(statusCodeExpected, response.StatusCode.ToString());
             });
             #endregion
         }
@@ -64,7 +64,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
             string categoryName = "General 12" + GeneralHelpers.ReturnStringWithRandomNumbers(2);
 
             //Expected Result
-            string statusCodeEsperado = "NotFound";
+            string statusCodeExpected = "NotFound";
             string message = "Issue #1988 not found";
             string code = "1100";
             string localized = "Issue 1988 not found.";
@@ -82,7 +82,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Issues
             #region Assert
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(statusCodeEsperado, response.StatusCode.ToString());
+                Assert.AreEqual(statusCodeExpected, response.StatusCode.ToString());
                 Assert.AreEqual(message, response.Data["message"].ToString());
                 Assert.AreEqual(code, response.Data["code"].ToString());
                 Assert.AreEqual(localized, response.Data["localized"].ToString());

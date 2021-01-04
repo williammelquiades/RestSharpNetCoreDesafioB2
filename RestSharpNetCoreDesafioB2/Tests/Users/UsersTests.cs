@@ -108,7 +108,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             List<string> dataUser = UsersBDSteps.ReturnMyUser();
 
             //Expected Result
-            int statusCodeEsperado = 200;
+            int statusCode = 200;
             string userName = dataUser[1];
             #endregion
 
@@ -123,7 +123,7 @@ namespace RestSharpNetCoreDesafioB2.Tests.Users
             #region Assert
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(statusCodeEsperado, (int)response.StatusCode);
+                Assert.AreEqual(statusCode, (int)response.StatusCode);
                 Assert.AreEqual(userName, response.Data["name"].ToString());
             });
             #endregion
